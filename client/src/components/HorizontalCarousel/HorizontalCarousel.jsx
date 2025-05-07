@@ -4,9 +4,9 @@ import { IMAGE_BASE_URL } from '../../../config.js';
 
 function HorizontalCarousel({category, title, itemList}) {
   return (
-    <div className="px-[6vw] py-10 overflow-visible">
+    <div data-aos="fade-down" className="pl-[6vw] pr-[6vw] pt-10 overflow-visible">
       <div className="font-bold text-lg">{title}</div>
-      <div className="flex space-x-4 overflow-x-auto py-8 scrollbar-thin 
+      <div className="flex space-x-4 overflow-x-auto pl-[2vw] pr-[2vw] py-10 scrollbar-thin 
                       scrollbar-thumb-green-400 scrollbar-track-transparent">
         {itemList.map((item) => (
           <MovieCard

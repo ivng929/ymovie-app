@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 function AppNavbar() {
@@ -6,15 +6,31 @@ function AppNavbar() {
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+      } 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
   return (
-    <nav className="bg-black text-white fixed top-0 left-0 w-full z-20 shadow-md">
+    <nav className={`text-white fixed top-0 w-full z-50 transition-colors duration-300 ${
+      scrolled ? "bg-black bg-opacity-90" : "bg-transparent"
+    }`}>
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left side: logo + nav links */}
         <div className="flex items-center space-x-6">
           <Link to="/" className="text-2xl font-bold text-green-400">YMovie</Link>
           <div className="hidden lg:flex space-x-4">
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 `hover:text-green-400 ${
                   isActive ? 'text-green-400' : 'text-gray-300'
@@ -46,15 +62,13 @@ function AppNavbar() {
           </div>
         </div>
 
-        {/* Right side: search + login/register + hamburger */}
+        {/* Right side: search + hamburger */}
         <div className="flex items-center space-x-4">
           <input
             type="text"
             placeholder="Search"
             className="hidden lg:block px-2 py-1 rounded bg-gray-800 text-sm"
           />
-          <Link to="/login" className="hidden lg:block text-sm hover:text-green-400">Login</Link>
-          <Link to="/register" className="hidden lg:block text-sm hover:text-green-400">Register</Link>
 
           {/* Hamburger menu */}
           <button onClick={toggleMenu} className="lg:hidden text-gray-200 focus:outline-none">
@@ -79,7 +93,7 @@ function AppNavbar() {
         <div className="lg:hidden bg-black w-full px-4 pb-4">
           <div className="flex flex-col space-y-3 mt-2">
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 `hover:text-green-400 ${
                   isActive ? 'text-green-400 font-bold' : 'text-gray-300'

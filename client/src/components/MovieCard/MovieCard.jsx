@@ -29,7 +29,8 @@ function MovieCard({
       </div>
 
       {/* card on hover */}
-      <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/70 shadow-[0_0_5px_2px_rgba(255,255,255,0.719)] scale-100 opacity-0 group-hover:scale-125 group-hover:opacity-100 z-30 transition-all duration-300">
+      <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/70 shadow-[0_0_5px_2px_rgba(255,255,255,0.719)] 
+      scale-100 opacity-0 group-hover:scale-125 group-hover:opacity-100 z-30 transition-all duration-300">
         <Link to={`/${category}/${id}`} className="w-full text-white no-underline">
           <div className="w-full rounded-lg overflow-hidden">
             <img src={backdropPath} alt="" className="w-full rounded-t-lg" />
