@@ -1,5 +1,4 @@
 import React from 'react';
-import './TVShows.module.css'
 
 function TVShows() {
   return (

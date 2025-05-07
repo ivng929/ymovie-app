@@ -1,10 +1,11 @@
-import React from 'react';
-import './Movies.module.css';
+import React from 'react'
 
-export default function Movies() {
+function Movies() {
   return (
     <div>
       
     </div>
   )
 }
+
+export default Movies
