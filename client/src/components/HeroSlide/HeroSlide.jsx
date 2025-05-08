@@ -33,13 +33,13 @@ function HeroSlide({ itemList }) {
               <div className="relative w-full flex flex-col md:flex-row z-10 items-center">
                 {/* text content */}
                 <div className="w-full md:w-2/3 px-6 md:px-12 space-y-4">
-                  <div className="text-green-400 text-2xl md:text-4xl font-bold pt-5 pb-5">
+                  <div className="text-green-500 text-2xl md:text-4xl font-bold pt-5 pb-5">
                     {item.title}
                   </div>
                   <div className="bg-black/60 w-fit px-2 py-1 rounded-md text-base">On Trending</div>
 
                   <div className="flex items-center space-x-4 text-base">
-                    <div className="flex items-center space-x-1 text-green-400">
+                    <div className="flex items-center space-x-1 text-green-500">
                       <FaStar />
                       <span>{parseFloat(item.vote_average.toFixed(1))}</span>
                     </div>
@@ -50,7 +50,7 @@ function HeroSlide({ itemList }) {
 
                   <div className="mt-2">
                     <Link to={`/movies/${item.id}`}>
-                      <button className="bg-green-400 hover:bg-green-600 text-white px-4 py-2 rounded">
+                      <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
                         View Details
                       </button>
                     </Link>

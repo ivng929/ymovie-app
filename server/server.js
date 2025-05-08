@@ -23,13 +23,13 @@ app.use((err, req, res, next) => {
 })
 
 // map routes
-app.use('/api/movies', movieRoutes);
+// app.use('/api/movies', movieRoutes);
 app.use('/api/tmdb', tmdbRoutes);
 
-// connect to mongoDB
-mongoose.connect(process.env.MONGODB_URI)
- .then(() => {console.log("Database Connected")})
- .catch((error) => console.log(`Error connecting to DB: ${error}`))
+// // connect to mongoDB
+// mongoose.connect(process.env.MONGODB_URI)
+//  .then(() => {console.log("Database Connected")})
+//  .catch((error) => console.log(`Error connecting to DB: ${error}`))
 
 // start server
 app.listen(port, () => {
