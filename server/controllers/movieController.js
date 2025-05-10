@@ -8,7 +8,6 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 // get all movies
 const fetchMovies = async (req, res) => {
-    console.log()
     try{
         // check if number of movies in db is less than 20
         const movieCount = await Movie.countDocuments();

@@ -5,6 +5,7 @@ import Movies from '../pages/Movies/Movies.jsx'
 import TVShows from '../pages/TVShows/TVShows.jsx'
 import MovieDetails from '../components/MovieDetails/MovieDetails.jsx';
 import { useLocation } from 'react-router-dom';
+import Search from '../pages/Search/Search.jsx';
 
 function AppRoutes() {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ function AppRoutes() {
         <Route path="/tv" element={<TVShows/>} />
         <Route path="/movies/:id" element={<MovieDetails category="movie"/>}/>
         <Route path="/tv/:id" element={<MovieDetails category="tv"/>}/>
+        <Route path="/search" element={<Search/>}/>
     </Routes>
   )
 }
